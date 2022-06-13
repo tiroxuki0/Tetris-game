@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tictactttttoe/static/css/main.e9369539.css",
-    "main.js": "/tictactttttoe/static/js/main.7b949e35.js",
-    "static/js/787.0ef42b96.chunk.js": "/tictactttttoe/static/js/787.0ef42b96.chunk.js",
-    "index.html": "/tictactttttoe/index.html",
-    "main.e9369539.css.map": "/tictactttttoe/static/css/main.e9369539.css.map",
-    "main.7b949e35.js.map": "/tictactttttoe/static/js/main.7b949e35.js.map",
-    "787.0ef42b96.chunk.js.map": "/tictactttttoe/static/js/787.0ef42b96.chunk.js.map"
+    "main.css": "/Tetris-game/static/css/main.e9369539.css",
+    "main.js": "/Tetris-game/static/js/main.b0055cb7.js",
+    "static/js/787.0ef42b96.chunk.js": "/Tetris-game/static/js/787.0ef42b96.chunk.js",
+    "index.html": "/Tetris-game/index.html",
+    "main.e9369539.css.map": "/Tetris-game/static/css/main.e9369539.css.map",
+    "main.b0055cb7.js.map": "/Tetris-game/static/js/main.b0055cb7.js.map",
+    "787.0ef42b96.chunk.js.map": "/Tetris-game/static/js/787.0ef42b96.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e9369539.css",
-    "static/js/main.7b949e35.js"
+    "static/js/main.b0055cb7.js"
   ]
 }
