@@ -1,0 +1,129 @@
+.over {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-60%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+.board {
+  border: 1px solid #3131316e;
+}
+.score_counter,
+.btn-play,
+#score,
+.title {
+  color: white;
+}
+
+.btn-play {
+  background: lightsalmon;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+
+.hand_homie {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* mobile controls */
+
+.mobile-controls {
+  display: none;
+  .btn {
+    width: 65px;
+    height: 30px;
+    font-size: 10px;
+    color: white;
+    background: transparent;
+    border-color: white;
+    outline: none;
+  }
+  .btn:focus {
+    background: white;
+    color: black;
+  }
+  .top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn-up {
+    }
+  }
+  .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    .btn-left {
+    }
+    .btn-down {
+    }
+    .btn-right {
+    }
+  }
+}
+
+.coming-soon {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  h2 {
+    color: white;
+    font-size: 20px;
+  }
+}
+/* mobile responsive */
+@media screen and (max-width: 767.98px) {
+  .over,
+  .controls,
+  .mobile-controls,
+  .board,
+  .controls {
+    display: none;
+  }
+  .container-board {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .mobile-controls {
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    flex-direction: column;
+    min-width: 50px;
+    height: auto;
+  }
+  .controls {
+    display: none;
+    top: 50%;
+    background: black;
+    right: 0;
+    justify-content: flex-end;
+    align-items: unset;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .coming-soon {
+    display: block;
+  }
+}

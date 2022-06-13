@@ -1,0 +1,60 @@
+.over {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-60%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+.board {
+  border: 1px solid #3131316e;
+}
+.score_counter,
+.btn-play,
+#score,
+.title {
+  color: white;
+}
+
+.btn-play {
+  background: lightsalmon;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+
+.hand_homie {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* mobile controls */
+
+.mobile-controls {
+  .top {
+    .btn-up {
+    }
+  }
+  .bottom {
+    .btn-left {
+    }
+    .btn-down {
+    }
+    .btn-right {
+    }
+  }
+}
