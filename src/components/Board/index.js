@@ -367,12 +367,11 @@ const Board = () => {
 
   const handleReset = (e) => {
     setOver(false);
-    if (over) {
-      setId(Math.floor((Math.random() * 10) % 7));
-      setBoardCurrent(
-        Array.from({ length: ROWS }, () => Array(COLS).fill(WHITE_COLOR_ID))
-      );
-    }
+    setId(Math.floor((Math.random() * 10) % 7));
+    setRowPos(-1);
+    setBoardCurrent(
+      Array.from({ length: ROWS }, () => Array(COLS).fill(WHITE_COLOR_ID))
+    );
   };
 
   function handleCompleteRows() {
