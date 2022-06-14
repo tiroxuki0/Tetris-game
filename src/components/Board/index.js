@@ -1,29 +1,31 @@
 import React from "react";
 import "./Board.scss";
 
+const TIME_AUTO_MOVEDOWN = 500;
+const BORDER = 2;
 const COLS = 10;
 const ROWS = 20;
 const BLOCK_SIZE = 30;
 
 const COLOR_MAPPING = [
-  "#ec1e2a",
+  "#ea414b",
   "#fcb549",
-  "#24b767",
-  "#af63ad",
-  "#6fcfe8",
-  "#64b3f4",
-  "#eadb13",
-  "transparent",
+  "#4dab1c",
+  "#b84189",
+  "#2046c8",
+  "#2696dd",
+  "#e8a432",
+  "rgb(235 235 235 / 10%)",
 ];
 
 const COLOR_TRIANGLE = [
-  "#b21621",
+  "#ed515d",
   "#fca31a",
-  "#1c8850",
-  "#9c3c94",
-  "#4e99b1",
-  "#1374ad",
-  "#e4de18",
+  "#5fb52e",
+  "#bd5997",
+  "#3559d0",
+  "#3ea3df",
+  "#edab46",
   "transparent",
 ];
 
@@ -226,7 +228,7 @@ const Board = () => {
     const interval = setInterval(() => {
       moveDown();
       console.log("move down");
-    }, 500);
+    }, TIME_AUTO_MOVEDOWN);
     return () => clearInterval(interval);
   });
 
@@ -309,13 +311,13 @@ const Board = () => {
   function drawCell(ctx, colPos, rowPos, colorId) {
     ctx.fillStyle = COLOR_MAPPING[colorId] || COLOR_MAPPING[WHITE_COLOR_ID];
     ctx.fillRect(
-      colPos * BLOCK_SIZE,
-      rowPos * BLOCK_SIZE,
-      BLOCK_SIZE,
-      BLOCK_SIZE
+      colPos * BLOCK_SIZE + BORDER,
+      rowPos * BLOCK_SIZE + BORDER,
+      BLOCK_SIZE - BORDER,
+      BLOCK_SIZE - BORDER
     );
     /* draw border */
-    ctx.strokeStyle = "#3131316e";
+    ctx.strokeStyle = "transparent";
     ctx.strokeRect(
       colPos * BLOCK_SIZE,
       rowPos * BLOCK_SIZE,
@@ -324,8 +326,8 @@ const Board = () => {
     );
     // the triangle
     ctx.beginPath();
-    ctx.moveTo(colPos * BLOCK_SIZE, rowPos * BLOCK_SIZE);
-    ctx.lineTo(colPos * BLOCK_SIZE, rowPos * BLOCK_SIZE + BLOCK_SIZE);
+    ctx.moveTo(colPos * BLOCK_SIZE + BORDER, rowPos * BLOCK_SIZE + BORDER);
+    ctx.lineTo(colPos * BLOCK_SIZE + BORDER, rowPos * BLOCK_SIZE + BLOCK_SIZE);
     ctx.lineTo(
       colPos * BLOCK_SIZE + BLOCK_SIZE,
       rowPos * BLOCK_SIZE + BLOCK_SIZE
@@ -415,30 +417,38 @@ const Board = () => {
             <span id="score">{score}</span>
           </div>
         </div>
-        <button className="btn-play" id="play" onClick={handleReset}>
+        <button className="btn-play" onClick={handleReset}>
           Reset
         </button>
       </div>
       <div className="mobile-controls">
-        <div className="top">
-          <button className="btn btn-up" onClick={onClickUp}>
-            up
+        <div className="left">
+          <div className="score_counter">
+            Score:
+            <span id="score">{score}</span>
+          </div>
+          <button className="btn-play" onClick={handleReset}>
+            Reset
           </button>
         </div>
-        <div className="bottom">
-          <button className="btn btn-left" onClick={onClickLeft}>
-            left
-          </button>
-          <button className="btn btn-down" onClick={onClickDown}>
-            down
-          </button>
-          <button className="btn btn-right" onClick={onClickRight}>
-            right
-          </button>
+        <div className="btns">
+          <div className="top">
+            <button className="btn btn-up" onClick={onClickUp}>
+              up
+            </button>
+          </div>
+          <div className="bottom">
+            <button className="btn btn-left" onClick={onClickLeft}>
+              left
+            </button>
+            <button className="btn btn-down" onClick={onClickDown}>
+              down
+            </button>
+            <button className="btn btn-right" onClick={onClickRight}>
+              right
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="coming-soon">
-        <h2>Coming soon...</h2>
       </div>
     </div>
   );

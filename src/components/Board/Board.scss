@@ -7,9 +7,6 @@
   color: white;
   font-size: 30px;
 }
-.board {
-  border: 1px solid #3131316e;
-}
 .score_counter,
 .btn-play,
 #score,
@@ -43,9 +40,12 @@
 }
 
 /* mobile controls */
-
 .mobile-controls {
   display: none;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-width: 50px;
+  height: auto;
   .btn {
     width: 65px;
     height: 30px;
@@ -54,6 +54,19 @@
     background: transparent;
     border-color: white;
     outline: none;
+  }
+  .left {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 15px;
+    button {
+      width: 100%;
+      height: 30px;
+      font-size: 10px;
+    }
   }
   .btn:focus {
     background: white;
@@ -64,8 +77,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .btn-up {
-    }
   }
   .bottom {
     width: 100%;
@@ -73,12 +84,6 @@
     justify-content: center;
     align-items: center;
     gap: 2px;
-    .btn-left {
-    }
-    .btn-down {
-    }
-    .btn-right {
-    }
   }
 }
 
@@ -95,35 +100,16 @@
 }
 /* mobile responsive */
 @media screen and (max-width: 767.98px) {
-  .over,
-  .controls,
-  .mobile-controls,
-  .board,
-  .controls {
-    display: none;
-  }
   .container-board {
     grid-template-columns: repeat(1, 1fr);
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 2%);
   }
   .mobile-controls {
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2px;
-    flex-direction: column;
-    min-width: 50px;
-    height: auto;
+    display: flex;
   }
   .controls {
     display: none;
-    top: 50%;
-    background: black;
-    right: 0;
-    justify-content: flex-end;
-    align-items: unset;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .coming-soon {
-    display: block;
   }
 }
