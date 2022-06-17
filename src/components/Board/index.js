@@ -366,8 +366,10 @@ const Board = () => {
   }
 
   const handleReset = (e) => {
+    setScore(0);
     setOver(false);
     setId(Math.floor((Math.random() * 10) % 7));
+    setColPos(3);
     setRowPos(-1);
     setBoardCurrent(
       Array.from({ length: ROWS }, () => Array(COLS).fill(WHITE_COLOR_ID))

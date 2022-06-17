@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-body{
+body {
   font-family: "Press Start 2P";
   font-size: 62.5%;
   background: #050f1b;
@@ -15,20 +15,20 @@ h6,
 p,
 span,
 button,
-a{
+a {
   font-family: "Press Start 2P";
 }
 
-.container-board{
+.container-board {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   justify-content: center;
   position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 
 /* sky */
